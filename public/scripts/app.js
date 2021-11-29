@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 //renders content from the database into html
 
-  const displayTest = function (arr) {
+  const displayListings = function (arr) {
     console.log(arr)
     return arr.widgets.forEach((listing) => {
       const card = document.createElement("div");
@@ -30,7 +30,7 @@ $(document).ready(function () {
     })
     .then(result => {
       //console.log(result)
-      displayTest(result)
+      displayListings(result)
     })
     .catch(err =>
       console.log(err.message))
