@@ -1,34 +1,41 @@
 // Client facing scripts here
 
-$(document).ready(function() {
-  const main = document.querySelector('main')
-  const sampleListings = [
-    {
-      title: "The white House",
-      pic: "https://media.architecturaldigest.com/photos/59a6c857134a14225b851902/3:4/w_2673,h_3564,c_limit/GettyImages-167852887.jpg",
-      price: 200,
-    },
-    {
-      title: "The Eiffel Tower",
-      pic: "https://www.planetware.com/photos-large/F/eiffel-tower.jpg",
-      price: 750,
-    },
-  ];
+$(document).ready(function () {
 
 
-  const createListings = function (arr) {
+  const main = document.querySelector("main");
 
-    return arr.forEach((listing) => {
-        const card = document.createElement('div');
-        const title =  $(`<h1>${listing.title}</h1>`)
-       const pic = $("<img>", { src: listing.pic}).addClass('image')
-        const price = $(`<h3>Listed for: $${listing.price}</h3>`)
-        card.className = 'cardStyle';
-        $(card).append($(title));
-       $(card).append($(pic));
-       $(card).append($(price));
-      main.appendChild(card)
-  })
+//renders content from the database into html
+
+  const displayTest = function (arr) {
+    console.log(arr)
+    return arr.widgets.forEach((listing) => {
+      const card = document.createElement("div");
+      const title = $(`<h1>${listing.name}</h1>`);
+      const price = $(`<h3>Listed for: $${listing.user_id}</h3>`);
+      card.className = "cardStyle";
+      $(card).append($(title));
+      $(card).append($(price));
+      main.appendChild(card);
+    });
+  };
+
+  //connects to the database, in this case is the db/seeds/widgets.sql
+
+  const getListings = () => {
+
+    $.ajax({
+      url: '/api/widgets',
+      method: 'GET'
+    })
+    .then(result => {
+      //console.log(result)
+      displayTest(result)
+    })
+    .catch(err =>
+      console.log(err.message))
   }
-  createListings(sampleListings)
-  })
+  getListings()
+//renders all the necessary listings
+
+});
