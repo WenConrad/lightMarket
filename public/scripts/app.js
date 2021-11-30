@@ -1,22 +1,45 @@
 // Client facing scripts here
 
-$(document).ready(function () {
+//$(document).ready(function () {
+  const cards = document.getElementById("cards");
 
-
-  const main = document.querySelector("main");
+  $(function( $ ){
 
 //renders content from the database into html
 
   const displayListings = function (arr) {
     console.log(arr)
-    return arr.users.forEach((listing) => {
-      const card = document.createElement("div");
-      const title = $(`<h1>${listing.name}</h1>`);
-      const price = $(`<h3>Listed for: $${listing.phone}</h3>`);
-      card.className = "cardStyle";
-      $(card).append($(title));
-      $(card).append($(price));
-      main.appendChild(card);
+    console.log(cards)
+    return arr.listings.forEach((listing) => {
+      //const card = document.createElement("div");
+      const title = $(`<h3>${listing.property_id}</h3>`)
+      //const price = $(`<h3>Listed for: $${listing.phone}</h3>`);
+      //card.className = "cardStyle";
+     //$(card).append($(title));
+      //$(card).append($(price));
+
+
+
+//      $( <section class="listing-adds">
+//     <div class="card" style="width: 18rem;">
+//       <img src="..." class="card-img-top" alt="...">
+//       <div class="card-body">
+//         <h5 class="card-title">Card title</h5>
+//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//       </div>
+//       <ul class="list-group list-group-flush">
+//         <li class="list-group-item" id='list-title'>An item</li>
+//         <li class="list-group-item">A second item</li>
+//         <li class="list-group-item">A third item</li>
+//       </ul>
+//       <div class="card-body">
+//         <a href="#" class="card-link">Card link</a>
+//         <a href="#" class="card-link">Another link</a>
+//       </div>
+//     </div>
+//   </section>
+// )
+
     });
   };
 
@@ -25,7 +48,7 @@ $(document).ready(function () {
   const getListings = () => {
 
     $.ajax({
-      url: '/api/usersB',
+      url: '/api/listings',
       method: 'GET'
     })
     .then(result => {
