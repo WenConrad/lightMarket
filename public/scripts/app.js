@@ -9,10 +9,10 @@ $(document).ready(function () {
 
   const displayListings = function (arr) {
     console.log(arr)
-    return arr.widgets.forEach((listing) => {
+    return arr.users.forEach((listing) => {
       const card = document.createElement("div");
       const title = $(`<h1>${listing.name}</h1>`);
-      const price = $(`<h3>Listed for: $${listing.user_id}</h3>`);
+      const price = $(`<h3>Listed for: $${listing.phone}</h3>`);
       card.className = "cardStyle";
       $(card).append($(title));
       $(card).append($(price));
@@ -25,11 +25,11 @@ $(document).ready(function () {
   const getListings = () => {
 
     $.ajax({
-      url: '/api/widgets',
+      url: '/api/usersB',
       method: 'GET'
     })
     .then(result => {
-      //console.log(result)
+      console.log(result)
       displayListings(result)
     })
     .catch(err =>

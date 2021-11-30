@@ -2,7 +2,7 @@
 INSERT INTO users (name, email, password, phone)
 VALUES (
   'Jonathan Bell',
-  'jbellcanada@gmail.com'
+  'jbellcanada@gmail.com',
   'password',
   '1-800-767-1123'
 ), (
