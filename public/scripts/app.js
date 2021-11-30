@@ -7,13 +7,14 @@
 
 //renders content from the database into html
   const displayProperties = function (arr) {
+
     console.log(arr)
+
     return arr.properties.forEach((property) => {
 
-
       $('.container').append(`<section class="listing-adds"> <div claconst displayListingInfo = function (arr) {
-
-      }"list-group-item">Number of bedrooms: ${property.bedrooms}</li><li class="list-group-item">Number of bathrooms: ${property.bathrooms}</li></ul><button id='button-listings'>Listing info</button></div></section>`)
+      }"list-group-item">Number of bedrooms: ${property.bedrooms}</li><li class="list-group-item">Number of bathrooms: ${property.bathrooms}</li></ul></div></section>
+      <button type="submit" id='favorite' class="btn btn-outline-danger"><i class="far fa-heart"></i></button>`)
 
     });
   };
@@ -34,17 +35,22 @@
     .catch(err =>
       console.log(err.message))
   }
+
   displayListings()
 //renders all the necessary listings
   const displayListingInfo = function (arr) {
       console.log(arr)
       return arr.properties.forEach((property) => {
-      
+
         $('.container').append(`<section class="listing-adds"> <div claconst displayListingInfo = function (arr) {
 
-        }"list-group-item">Number of bedrooms: ${property.bedrooms}</li><li class="list-group-item">Number of bathrooms: ${property.bathrooms}</li></ul><button id='button-listings'>Listing info</button></div></section>`)
+        }"list-group-item">Number of bedrooms: ${property.bedrooms}</li><li class="list-group-item">Number of bathrooms: ${property.bathrooms}</li></ul></div></section>`)
 
       });
     };
+
+    $( 'button' ).click(function() {
+      alert( "This property has been added to your favorites" );
+    });
   })
 
