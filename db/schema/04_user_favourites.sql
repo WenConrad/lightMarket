@@ -4,5 +4,5 @@ DROP TABLE IF EXISTS favourites CASCADE;
 CREATE TABLE favourites (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER NOT NULL REFERENCES users(id),
-  listing_id NOT NULL REFERENCES listings(id)
+  listing_id INTEGER NOT NULL REFERENCES listings(id)
 );

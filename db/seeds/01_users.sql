@@ -50,4 +50,4 @@ VALUES (
   'apexpredator@hololive.com',
   'password',
   '1-899-765-4321'
-)
+);
