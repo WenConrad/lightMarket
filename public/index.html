@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="./styles/main.css" type="text/css" />
     <link rel="stylesheet" href="./styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/form.css" type="text/css" />
   
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -60,17 +61,14 @@
         
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Sign in</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Register</a>
+            <a class="nav-link active" aria-current="page" href="#">Login as Admin</a>
           </li>
         </ul>
       </div>
 
-      <div id="adds_property" class="hidden">
-
-      </div>
+    </div>
+    <!-- hidden house property -->
+    <div id="adds_property" class="hidden">
     </div>
   </nav>
   <div class="banner">
@@ -129,17 +127,21 @@
 
   <section class="listing-adds">
     <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="./images/main/house1.png" class="card-img-top" alt="house1.jpg">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">House #1</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">Price: $2000000</li>
+        <li class="list-group-item">#Bedroom: 3</li>
+        <li class="list-group-item"># Bathroom: 2</li>
+        <li class="list-group-item">Sqrt: 1000</li>
       </ul>
       <div class="card-body">
+        <form method="post" action="/favourite">
+          <button type="submit" class="btn btn-outline-danger"><i class="far fa-heart"></i></button>
+        </form>
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
       </div>
