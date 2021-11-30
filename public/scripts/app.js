@@ -1,64 +1,57 @@
 // Client facing scripts here
 
 //$(document).ready(function () {
-  const cards = document.getElementById("cards");
+
 
   $(function( $ ){
 
 //renders content from the database into html
-
-  const displayListings = function (arr) {
+  const displayProperties = function (arr) {
     console.log(arr)
-    console.log(cards)
-    return arr.listings.forEach((listing) => {
-      //const card = document.createElement("div");
-      const title = $(`<h3>${listing.property_id}</h3>`)
-      //const price = $(`<h3>Listed for: $${listing.phone}</h3>`);
-      //card.className = "cardStyle";
-     //$(card).append($(title));
-      //$(card).append($(price));
+    return arr.properties.forEach((property) => {
 
 
+      $('.container').append(`<section class="listing-adds"> <div claconst displayListingInfo = function (arr) {
 
-//      $( <section class="listing-adds">
-//     <div class="card" style="width: 18rem;">
-//       <img src="..." class="card-img-top" alt="...">
-//       <div class="card-body">
-//         <h5 class="card-title">Card title</h5>
-//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//       </div>
-//       <ul class="list-group list-group-flush">
-//         <li class="list-group-item" id='list-title'>An item</li>
-//         <li class="list-group-item">A second item</li>
-//         <li class="list-group-item">A third item</li>
-//       </ul>
-//       <div class="card-body">
-//         <a href="#" class="card-link">Card link</a>
-//         <a href="#" class="card-link">Another link</a>
-//       </div>
-//     </div>
-//   </section>
-// )
+      }"list-group-item">Number of bedrooms: ${property.bedrooms}</li><li class="list-group-item">Number of bathrooms: ${property.bathrooms}</li></ul><button id='button-listings'>Listing info</button></div></section>`)
 
     });
   };
 
+
   //connects to the database, in this case is the db/seeds/widgets.sql
 
-  const getListings = () => {
+  const displayListings = () => {
 
     $.ajax({
-      url: '/api/listings',
+      url: '/api/properties',
       method: 'GET'
     })
     .then(result => {
       console.log(result)
-      displayListings(result)
+      displayProperties(result)
     })
     .catch(err =>
       console.log(err.message))
   }
-  getListings()
+  displayListings()
 //renders all the necessary listings
+  const displayListingInfo = function (arr) {
+      console.log(arr)
+      return arr.properties.forEach((property) => {
+        //const card = document.createElement("div");
+        //$('cards').append(`<p>${property.id}</p>`)
+        console.log('this is:', $('cards'))
+        //const price = $(`<h3>Listed for: $${listing.phone}</h3>`);
+        //card.className = "cardStyle";
+       //$(card).append($(title));
+        //$(card).append($(price));
+        //$('div.card').append(`<h1>${property.address}</h1>`)
+        $('.container').append(`<section class="listing-adds"> <div claconst displayListingInfo = function (arr) {
 
-});
+        }"list-group-item">Number of bedrooms: ${property.bedrooms}</li><li class="list-group-item">Number of bathrooms: ${property.bathrooms}</li></ul><button id='button-listings'>Listing info</button></div></section>`)
+
+      });
+    };
+  })
+
