@@ -6,9 +6,19 @@ body {
 
 }
 
+#navbar{
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
 .nav_navbar_common {
   display: flex;
   justify-content: space-between;
+}
+
+.adds_property {
+  display: none;
 }
 
 .banner {
@@ -27,5 +37,7 @@ body {
     justify-content: end;
     flex-direction: column;
     align-items: end;
-  }
+  } 
+
 }
+
