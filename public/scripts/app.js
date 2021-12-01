@@ -1,12 +1,25 @@
 // Client facing scripts here
 
-//$(document).ready(function () {
+  const getLimit = function () {
+    let limit;
+     $( '#filter').on('submit', function(event) {
+       event.preventDefault();
+       console.log('click')
+      $( '.listing-adds' ).empty();
+        limit = $( this)[0][0].valueAsNumber
+       //return this value as a number.
+ })
+ return limit;
+}
+//return limit
+
+
 
 $(function ($) {
   //renders content from the database into html
   const displayProperties = function (arr) {
 
-
+if (price < limit)
     return arr.properties.forEach((property) => {
       $( '.listing-adds' ).append( `<div class="card" style="width: 18rem;">
       <img src="./images/main/house1.png" class="card-img-top" alt="house1.jpg">
@@ -29,12 +42,7 @@ $(function ($) {
       </div>
     </div>` )
 
-      // $(".container")
-      //   .append(`<section class="listing-adds">  <div class="card" style="width: 18rem;">
 
-      // <div class="card-body"><li class="list-group-item">  <h5 class="card-title">${property.address}</h5>Number of bedrooms: ${property.bedrooms}</h5> <ul class="list-group list-group-flush"><li class="list-group-item">Number of bathrooms: ${property.bathrooms}</li><li class="list-group-item">Listed for $${property.price}</li></ul></div>
-      // <div class="card-body card-body_links">
-      // <button id='favorite-${property.id}' class="favorite btn btn-outline-danger"><i class="far fa-heart"></i></button></div></section>`);
       $(`#favorite-${property.id}`).click(function () {
         alert("This property has been added to your favorites");
       });
@@ -52,9 +60,16 @@ $(function ($) {
         console.log(result);
         displayProperties(result);
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => console.log('Error:', err));
   };
 
   displayListings();
 
 });
+
+
+
+
+
+
+
