@@ -1,0 +1,14 @@
+.listing-adds {
+width: 60em;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+  .card {
+    width: 14em;
+  margin: 0.5em 0.5em 0 0.5em;
+  }
+}
+
+.filters {
+  width: 10em;
+}
