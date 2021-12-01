@@ -16,7 +16,7 @@ $(function ($) {
         if (property.price < limit) {
           $(".listing-adds").append(`<div class="card">
 
-<img src="./images/main/house1.png" class="card-img-top" alt="house1.jpg">
+<img src="${property.photo_url}" class="card-img-top" alt="house1.jpg">
 <div class="card-body">
   <h5 class="card-title">${property.address}</h5>
   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
