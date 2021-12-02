@@ -186,3 +186,12 @@ $(function ($) {
 
 
 });
+
+// delete button
+$(document).ready(function() {
+  $("form[method=delete]").submit(function(event) { //temporary delete class we'll have to assign it i dont know how we have our html set up
+    event.preventDefault();
+    $(this).closest('div.card').remove(); //currently removing everything? seems to be refreshing page
+
+  });
+});
