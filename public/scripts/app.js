@@ -5,6 +5,7 @@ $(function ($) {
   const currentUserId = 2
   const filter = document.getElementById("filter");
 
+
   filter.addEventListener("submit", function (event) {
     event.preventDefault();
     let limit = filter.elements[0].value;
@@ -69,9 +70,24 @@ $(function ($) {
             </form>
           </div></div>`);
 
-          $(`#favorite-${property.id}`).click(function () {
-            alert("This property has been added to your favorites");
-          });
+           $(`#favorite-${property.id}`).click(function () {
+             alert('this property has been added to your favourites')
+             const data = {
+               user_id: currentUserId,
+               listing_id: property.listing_id
+             }
+             $.ajax({
+               url: "/api/favourites",
+               method: "POST",
+               data: data
+             })
+               .done((result) => {
+                 console.log(result);
+
+               })
+               .catch((err) => console.log("Err:", err));
+
+           });
         }
       });
     };
@@ -116,7 +132,6 @@ $(function ($) {
 </ul>
 <div class="card-body card-body_links">
 
-    <button type="submit" id='favorite-${property.id}' class="btn btn-outline-success"><i class="far fa-heart"></i></button>
 
   <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:${property.email}"><i class="far fa-envelope"></i></a></button>
 
@@ -156,9 +171,6 @@ $(function ($) {
 </div>
 </div>`);
 
-          $(`#favorite-${property.id}`).click(function () {
-            alert("This property has been added to your favorites");
-          });
         }
       });
     };
@@ -202,7 +214,7 @@ $(function ($) {
           </ul>
           <div class="card-body card-body_links">
 
-              <button type="submit" id='favorite-${property.id}' class="btn btn-outline-success"><i class="far fa-heart"></i></button>
+              <button type='button' id='favorite-${property.id}' class="btn btn-outline-success"><i class="far fa-heart"></i></button>
 
             <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:${property.email}"><i class="far fa-envelope"></i></a></button>
 
@@ -240,11 +252,26 @@ $(function ($) {
               <button type="button" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
             </form>
           </div>
-          </div>`);
+          </div>`).slideDown();
 
           $(`#favorite-${property.id}`).click(function () {
-            alert("This property has been added to your favorites");
-          });
+            alert('this property has been added to your favourites')
+             const data = {
+               user_id: currentUserId,
+               listing_id: property.listing_id
+             }
+             $.ajax({
+               url: "/api/favourites",
+               method: "POST",
+               data: data
+             })
+               .done((result) => {
+                 console.log(result);
+
+               })
+               .catch((err) => console.log("Err:", err));
+
+           });
       });
     };
 
@@ -265,3 +292,5 @@ $(function ($) {
     displayListings();
   });
 });
+
+
