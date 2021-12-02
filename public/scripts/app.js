@@ -32,7 +32,7 @@ $(function ($) {
 
               <button type="submit" id='favorite-${property.id}' class="btn btn-outline-success"><i class="far fa-heart"></i></button>
 
-            <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:$username@lightmarket.com"><i class="far fa-envelope"></i></a></button>
+            <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:${property.email}"><i class="far fa-envelope"></i></a></button>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="far fa-comments"></i></button>
@@ -118,7 +118,7 @@ $(function ($) {
 
     <button type="submit" id='favorite-${property.id}' class="btn btn-outline-success"><i class="far fa-heart"></i></button>
 
-  <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:username@lightmarket.com"><i class="far fa-envelope"></i></a></button>
+  <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:${property.email}"><i class="far fa-envelope"></i></a></button>
 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="far fa-comments"></i></button>
@@ -204,7 +204,7 @@ $(function ($) {
 
               <button type="submit" id='favorite-${property.id}' class="btn btn-outline-success"><i class="far fa-heart"></i></button>
 
-            <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:username@lightmarket.com"><i class="far fa-envelope"></i></a></button>
+            <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:${property.email}"><i class="far fa-envelope"></i></a></button>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="far fa-comments"></i></button>
