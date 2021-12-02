@@ -64,7 +64,7 @@ $(function ($) {
   </div>
   <form method="delete" action="">
 
-    <button type="button" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
+    <button type="submit" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
   </form>
 </div>
 </div>`);
@@ -154,7 +154,7 @@ $(function ($) {
   </div>
   <form method="delete" action="">
 
-    <button type="button" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
+    <button type="submit" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
   </form>
 </div>
 </div>`);
