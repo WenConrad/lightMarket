@@ -226,7 +226,7 @@ $(function ($) {
 </ul>
 <div class="card-body card-body_links">
 
-    <button type="submit" id='favorite-${property.id}' class="btn btn-outline-success"><i class="far fa-heart"></i></button>
+    
 
   <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:${property.email}"><i class="far fa-envelope"></i></a></button>
 
