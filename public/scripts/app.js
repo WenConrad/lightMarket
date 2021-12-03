@@ -183,6 +183,7 @@ $(function ($) {
 
            });
         }
+
       });
     };
 
@@ -226,7 +227,7 @@ $(function ($) {
 </ul>
 <div class="card-body card-body_links">
 
-    
+
 
   <button type="button" id='test-button' class="btn btn-outline-secondary"><a href="mailto:${property.email}"><i class="far fa-envelope"></i></a></button>
 
@@ -352,7 +353,7 @@ $(function ($) {
           </div>
           </div>`).slideDown();
 
-          $(`#favorite-${property.id}`).click(function (e) {
+          $(`favorite-${property.id}`).click(function (e) {
             alert('this property has been added to your favourites')
             e.preventDefault()
              const data = {
