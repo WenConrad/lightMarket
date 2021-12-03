@@ -109,7 +109,7 @@ $(function ($) {
 
       return arr.properties.forEach((property) => {
         if (property.price < limit) {
-          $(".listing-adds").append(`<div class="card">
+          $(".listing-adds").append(`<div class="card" id='listing-${property.id}'>
 
           <img src="${property.photo_url}" class="card-img-top" alt="house1.jpg">
           <div class="card-body">
@@ -159,7 +159,7 @@ $(function ($) {
             </div>
             <form method="delete" action="">
 
-              <button type="button" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
+              <button type="button" id='delete-${property.id}' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
             </form>
           </div></div>`);
 
@@ -181,6 +181,9 @@ $(function ($) {
                })
                .catch((err) => console.log("Err:", err));
 
+           });
+           $(`#delete-${property.id}`).click(function () {
+             $(this).closest(`#listing-${property.id}`).remove();
            });
         }
 
@@ -212,7 +215,7 @@ $(function ($) {
     const displayProperties = function (arr) {
       return arr.properties.forEach((property) => {
         if (property.user_id === currentUserId) {
-          $(".listing-adds").append(`<div class="card">
+          $(".listing-adds").append(`<div class="card" id="listing-${property.id}>
 
 <img src="${property.photo_url}" class="card-img-top" alt="house1.jpg">
 <div class="card-body">
@@ -260,9 +263,9 @@ $(function ($) {
       </div>
     </div>
   </div>
-  <form method="delete" action="">
+  <form method="delete" action="/" class="delete-${property.id}">
 
-    <button type="button" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
+    <button type="submit" id="delete-${property.id}" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
   </form>
 </div>
 </div>`);
@@ -298,7 +301,7 @@ $(function ($) {
 
     const displayProperties = function (arr) {
       return arr.properties.forEach((property) => {
-          $(".listing-adds").append(`<div class="card">
+          $(".listing-adds").append(`<div class="card" id="listing-${property.id}>
 
           <img src="${property.photo_url}" class="card-img-top" alt="house1.jpg">
           <div class="card-body">
@@ -348,7 +351,7 @@ $(function ($) {
             </div>
             <form method="delete" action="">
 
-              <button type="button" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
+              <button type="button" id="#delete-${property.id}" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
             </form>
           </div>
           </div>`).slideDown();
