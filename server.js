@@ -57,6 +57,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.delete("/", (req, res) => {
+  console.log("testing");
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

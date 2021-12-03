@@ -14,7 +14,7 @@ $(function ($) {
     const displayProperties = function (arr) {
       return arr.properties.forEach((property) => {
         if (property.price < limit) {
-          $(".listing-adds").append(`<div class="card">
+          $(".listing-adds").append(`<div class="card" id='listing-${property.id}'>
 
 <img src="${property.photo_url}" class="card-img-top" alt="house1.jpg">
 <div class="card-body">
@@ -62,15 +62,15 @@ $(function ($) {
       </div>
     </div>
   </div>
-  <form method="delete" action="">
-
-    <button type="submit" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
-  </form>
-</div>
+  <button type="button" id="delete-${property.id}" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+  </div>
 </div>`);
 
           $(`#favorite-${property.id}`).click(function () {
             alert("This property has been added to your favorites");
+          });
+          $(`#delete-${property.id}`).click(function () {
+            $(this).closest(`#listing-${property.id}`).remove();
           });
         }
       });
@@ -104,7 +104,7 @@ $(function ($) {
     const displayProperties = function (arr) {
       return arr.properties.forEach((property) => {
         if (property.price < limit) {
-          $(".listing-adds").append(`<div class="card">
+          $(".listing-adds").append(`<div class="card" id="listing-${property.id}>
 
 <img src="./images/main/house1.png" class="card-img-top" alt="house1.jpg">
 <div class="card-body">
@@ -152,9 +152,9 @@ $(function ($) {
       </div>
     </div>
   </div>
-  <form method="delete" action="">
+  <form method="delete" action="/" class="delete-${property.id}">
 
-    <button type="submit" id='test-button' class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
+    <button type="submit" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a></button>
   </form>
 </div>
 </div>`);
@@ -184,14 +184,5 @@ $(function ($) {
   });
 
 
-
 });
 
-// delete button
-$(document).ready(function() {
-  $("form[method=delete]").submit(function(event) { //temporary delete class we'll have to assign it i dont know how we have our html set up
-    event.preventDefault();
-    $(this).closest('div.card').remove(); //currently removing everything? seems to be refreshing page
-
-  });
-});
