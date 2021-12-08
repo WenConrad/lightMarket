@@ -23,6 +23,26 @@ body {
 
 .banner {
   width: 100%;
+  height: 30em;
+  padding: 1em;
+  padding-top: 5em;
+  background-image: url('../images/banner.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 45%;
+  background-position: 50% 20%;
+  .grouped-rows {
+    display: flex;
+    flex-direction: column;
+    .grouped-forms {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      div {
+        width: 30%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -31,7 +51,7 @@ body {
     justify-content: end;
     flex-direction: column;
     align-items: end;
-  } 
+  }
 
 }
 
